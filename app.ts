@@ -31,3 +31,47 @@ function inc (speed: number, inc: number = 1) : number {
 }
 console.log(`inc (5,1) = ${inc(5,1)}`)
 console.log(`inc (5) = ${inc(5)}`)
+
+
+//CLASSES E INTERFACES
+class Spacecraft {
+
+    constructor (public propulsor: string){}
+
+    jumpIntoHyperspace() {
+        console.log(`Entering hyperspace with ${this.propulsor}`) //precisa usar o this por estar utilizando um membro da instancia dentro da classe
+    }
+}
+
+let ship = new Spacecraft('hyperdrive')
+ship.jumpIntoHyperspace()
+
+class MillenniumFalcon extends Spacecraft implements Containership{
+
+    cargoContainers: number
+
+    constructor(){
+        super('hyperdrive')
+        this.cargoContainers = 2
+    }
+
+    jumpIntoHyperspace(){
+        if (Math.random() >= 0.5){
+            super.jumpIntoHyperspace()
+        }else {
+            console.log('Failed to jump into hyperspace')
+        }
+    }
+}
+
+let falcon = new MillenniumFalcon()
+falcon.jumpIntoHyperspace()
+
+interface Containership { //n tem uma estrutura que represente em js
+
+    cargoContainers: number //colocando uma ? na frente do atributo ou metodo ele se torna opcional
+}
+
+let goodForTheJob = ( ship: Containership ) => ship.cargoContainers > 2
+
+console.log(`Is falcon good for the job? ${goodForTheJob ( falcon ) ? 'yes': 'no'}`)
