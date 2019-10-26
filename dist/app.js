@@ -27,9 +27,11 @@ function inc(speed, inc) {
 }
 console.log("inc (5,1) = " + inc(5, 1));
 console.log("inc (5) = " + inc(5));
-//CLASSES E INTERFACES
+//CLASSES E INTERFACES + ORGANIZANDO OS EXEMPLOS EM MÓDULOS
 var base_ships_1 = require("./base-ships");
 var starfighters_1 = require("./starfighters");
+var _ = require("lodash");
+console.log(_.pad("Typescript Examples", 40, "="));
 var ship = new base_ships_1.Spacecraft('hyperdrive');
 ship.jumpIntoHyperspace();
 var falcon = new starfighters_1.MillenniumFalcon();

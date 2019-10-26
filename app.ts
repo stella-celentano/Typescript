@@ -33,10 +33,13 @@ console.log(`inc (5,1) = ${inc(5,1)}`)
 console.log(`inc (5) = ${inc(5)}`)
 
 
-//CLASSES E INTERFACES
+//CLASSES E INTERFACES + ORGANIZANDO OS EXEMPLOS EM MÓDULOS
 
 import {Spacecraft, Containership} from './base-ships'
 import {MillenniumFalcon} from './starfighters'
+
+import * as _ from 'lodash'
+console.log(_.pad("Typescript Examples", 40, "="))
 
 let ship = new Spacecraft('hyperdrive')
 ship.jumpIntoHyperspace()

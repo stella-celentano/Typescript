@@ -2,6 +2,9 @@
     //toda vez que salvar um arquivo js vai salvar nessa pasta
    "compilerOptions": {
        "outDir": "dist",
-       "noEmitOnError": false
+       "noEmitOnError": false,
+       "typeRoots": [
+           "node_modules/@types"
+       ]
    } 
 }
